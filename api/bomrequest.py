@@ -1,15 +1,18 @@
 from bs4 import BeautifulSoup
 import requests
-
+from bomparser import BomParser
 
 class BomRequest(object):
     '''
     Class used for managing requests for data from BOM
     '''
 
-    def __init__(self, bom_urls):
-        self.bom_urls = bom_urls
+    def __init__(self):
+        self.urls = BomUrls()
+        self.parser = BomParser()
 
+    def get_all_summary_observations(self):
+        raise NotImplementedError
 
 class BomUrls(object):
     '''
